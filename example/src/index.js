@@ -1,11 +1,16 @@
-/** @jsx h */
-import '../../lib/native-sim.js';
-import { Component, h } from 'skatejs';
+import React from 'react';
+import { render } from 'react-dom';
+import './hello';
 
-class Hello extends Component {
-  renderCallback () {
-    return <span>Hello, <slot />!</span>;
+class Foo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return <div>{this.props.children}</div>;
   }
 }
 
-customElements.define('x-hello', Hello);
+render(<Foo><x-counter /></Foo>, document.querySelector('#main'));
+

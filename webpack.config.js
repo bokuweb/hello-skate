@@ -17,9 +17,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
-      loaders: ['babel', 'babel-loader'],
+      loaders: ['babel-loader'],
       include: [path.join(__dirname, 'src'), path.join(__dirname, 'example/src')]
     }]
   }
